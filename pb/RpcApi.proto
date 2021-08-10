@@ -1,0 +1,16 @@
+syntax = "proto3";
+option go_package = ".;pb";
+
+service Rpc {
+  rpc Md5(RpcReq) returns (RpcRes) {}
+  rpc Hello(RpcReq) returns (RpcRes) {}
+}
+
+message RpcReq {
+  string msg = 1;
+}
+
+message RpcRes {
+  string text = 1;
+  string from = 2;
+}
